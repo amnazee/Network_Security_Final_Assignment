@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 def decompose(n_minus_1: int) -> tuple[int, int]:
-    """n - 1 = 2^s * d with d odd. Returns (s, d)."""
     s, d = 0, n_minus_1
     while d % 2 == 0:
         d //= 2
@@ -9,13 +8,6 @@ def decompose(n_minus_1: int) -> tuple[int, int]:
 
 
 def power_lines(a: int, d: int, n: int) -> tuple[int, list[str]]:
-    """
-    Compute a^d mod n and describe it with a^10, a^20, ... like the notes.
-
-    For 561:  d = 35 = 3*10 + 5, so
-        2^10 = 463, 2^20 = 463^2 = 67, 2^30 = 67*463 = 166,
-        2^35 = 166 * 2^5 = 5312 = 263 (mod 561).
-    """
     q, r = divmod(d, 10)
     lines: list[str] = []
 
