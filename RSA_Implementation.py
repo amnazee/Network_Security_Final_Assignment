@@ -1,14 +1,3 @@
-"""
-RSA implementation (key generation from primes, decryption of a ciphertext).
-
-Given p, q, e and a ciphertext c, we compute:
-    n   = p * q
-    phi = (p - 1)(q - 1)
-    d   = e^-1 mod phi        (found with the extended Euclidean algorithm)
-    m   = c^d mod n           (decryption)
-"""
-
-
 def extended_gcd(a, b):
     """Return (g, x, y) such that a*x + b*y = g = gcd(a, b).
 
